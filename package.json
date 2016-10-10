@@ -1,0 +1,33 @@
+{
+  "name": "lsakcuf",
+  "version": "1.0.0",
+  "description": "MEAN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddarthvader/lsakcuf.git"
+  },
+  "keywords": [
+    "MEAN"
+  ],
+  "author": "@siddartvader",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siddarthvader/lsakcuf/issues"
+  },
+  "homepage": "https://github.com/siddarthvader/lsakcuf#readme",
+  "dependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0"
+  }
+}
