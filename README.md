@@ -1,2 +1,2 @@
 # lsakcuf
-MEAN
+MEANjs test run
