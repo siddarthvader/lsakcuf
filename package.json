@@ -1,36 +1,23 @@
 {
-  "name": "lsakcuf",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "MEAN",
+  "description": "i am making a custimozed blog for myself",
   "main": "index.js",
   "scripts": {
-    "build": "babel js -d lib"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config mywebpack.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/siddarthvader/lsakcuf.git"
   },
   "keywords": [
-    "MEAN"
+    "blog"
   ],
-  "author": "@siddartvader",
+  "author": "siddharth",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/siddarthvader/lsakcuf/issues"
   },
-  "homepage": "https://github.com/siddarthvader/lsakcuf#readme",
-  "dependencies": {
-    "webpack": "^1.13.2",
-    "moment": "~2.13.0",
-    "moment-timezone": "~0.5.3",
-    "ngprogress": "~1.1.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-react": "^6.16.0"
-  }
+  "homepage": "https://github.com/siddarthvader/lsakcuf#readme"
 }
