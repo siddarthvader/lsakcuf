@@ -11,13 +11,25 @@
     "type": "git",
     "url": "git+https://github.com/siddarthvader/lsakcuf.git"
   },
-  "keywords": [
-    "blog"
-  ],
   "author": "siddharth",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/siddarthvader/lsakcuf/issues"
+  },
+  "keywords": [
+    "learn"
+  ],
+  "dependencies": {
+    "angular2": "^2.0.0-beta.21",
+    "es6-shim": "^0.35",
+    "lodash": "^4.17.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.6",
+    "typescript": "^2.1.4",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.27"
   },
   "homepage": "https://github.com/siddarthvader/lsakcuf#readme"
 }
