@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles/style_desktop.css">
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+    <script>
+        document.onload = function () {
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue!'
+                }
+            })
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <!--<script type="javascript" src="script/vue.js"></script>-->
+
+</body>
+
+</html>
