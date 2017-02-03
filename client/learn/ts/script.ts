@@ -1,32 +1,25 @@
-class Student{
-    
-    public name:string;
-    public fullName:string;
-    constructor(public firstName,public lastName,public name){
-        this.fullName= "helllo " +(firstName+" " +lastName)+ " goodperson"; 
-    };
-    public doubleCount(number:number){
-        console.info(number*2);
-    }
-    public tripleCount(str:string){
-        console.log(str,'inside private');
-    }
-    public printArray(arr:Array<number>){
-        for(var i=0;i<10;i++){
-            
-        }
-    }
-}
-interface Person{
-    firstName:string,
-    lastName:string
-};
+{
+    let myName: string;
+    myName = 'siddharth';
+    console.log('name', myName);
+   
+    let numner:number;
+    numner=23;
+    console.log('number',numner);
 
-function hello(person:Person){
-    return `hello ${person.firstName}+${person.lastName} person,
-    how are you?`;
+
+    console.log(`hello i am ${myName} and i am number ${numner}`);
+
+    console.log(`i like it
+    there is 
+    even a 
+    line break 
+    allowed
+    ^^^^^
+    ^^^
+    ^^
+    ^`);
+
+    let list:number[]=[1,2,3];
+    let list1:Array<string>=['a','v','f'];
 }
-var user=new Student("oskar","schindler");
-user.doubleCount(10);
-user.tripleCount('wow');
-console.info(user.fullName);
