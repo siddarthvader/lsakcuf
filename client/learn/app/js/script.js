@@ -1,29 +1,13 @@
-var Student = (function () {
-    function Student(firstName, lastName, name) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.name = name;
-        this.fullName = "helllo " + (firstName + " " + lastName) + " goodperson";
-    }
-    ;
-    Student.prototype.doubleCount = function (number) {
-        console.info(number * 2);
-    };
-    Student.prototype.tripleCount = function (str) {
-        console.log(str, 'inside private');
-    };
-    Student.prototype.printArray = function (arr) {
-        for (var i = 0; i < 10; i++) {
-        }
-    };
-    return Student;
-}());
-;
-function hello(person) {
-    return "hello " + person.firstName + "+" + person.lastName + " person,\n    how are you?";
+{
+    var myName = void 0;
+    myName = 'siddharth';
+    console.log('name', myName);
+    var numner = void 0;
+    numner = 23;
+    console.log('number', numner);
+    console.log("hello i am " + myName + " and i am number " + numner);
+    console.log("i like it\n    there is \n    even a \n    line break \n    allowed\n    ^^^^^\n    ^^^\n    ^^\n    ^");
+    var list = [1, 2, 3];
+    var list1 = ['a', 'v', 'f'];
 }
-var user = new Student("oskar", "schindler");
-user.doubleCount(10);
-user.tripleCount('wow');
-console.info(user.fullName);
 //# sourceMappingURL=script.js.map
