@@ -2,16 +2,21 @@
 
 <head>
     <!--<link rel="stylesheet" href="styles/style_desktop.css">-->
-   <script src="https://unpkg.com/vue/dist/vue.js"></script>
-   
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
 </head>
 
 <body>
     <div id="app">
-        {{ text }} Nice to meet Vue.
+        <div>
+            {{ text }} Nice to meet Vue.
+        </div>
+        <div v-bind:title="names">
+               hover over me
+        </div>
     </div>
-    
-    <script src="script/vue.js"></script>
+
+    <script src="script/app.js"></script>
 
 </body>
 
