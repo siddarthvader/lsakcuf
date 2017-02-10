@@ -5,7 +5,8 @@
         "sourceMap": true,
         "outDir": "client/learn/app/js",
         "emitDecoratorMetadata": false,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "watch": true
     },
     "include": [
         "client/**/*.ts"
