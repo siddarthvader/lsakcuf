@@ -1,0 +1,20 @@
+{
+  "name": "react",
+  "homepage": "https://github.com/siddarthvader/lsakcuf",
+  "authors": [
+    "siddharth <siddharthjn93@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.4.2"
+  }
+}
