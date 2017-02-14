@@ -1,0 +1,9 @@
+{
+  "plugins": ["transform-react-jsx"],
+  "ignore": [
+    "client/",
+    "node_modules/",
+    "server/",
+    "vue/"
+  ]
+}
