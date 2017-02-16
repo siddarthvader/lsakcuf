@@ -1,17 +1,25 @@
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
+
+function getGreeting(user) {
+  return <h1> hello, {formatName(user)}  </h1>
 }
 
-const user = {
-  firstName: 'Harper',
-  lastName: 'Perez'
-};
+function formatName(user) {
+  return user.firstName + ' my name is ' + user.lastName;
+}
 
-const element = (
-  <h1>
-    Hello, {formatName(user)}!
-  </h1>
+
+const user = {
+  firstName: "Sid",
+  lastName: "Jain"
+}
+
+const element=(
+  <div>
+  <h1> This is growing </h1>
+  <p>react is new {getGreeting(user)}</p>
+  </div>
 );
+
 
 ReactDOM.render(
   element,
