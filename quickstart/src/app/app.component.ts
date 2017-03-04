@@ -23,7 +23,7 @@ export class Hero {
   name: string;
 }
 
-shaktimaan:Hero = {
+Hero:Hero = {
   id: 1,
   name: 'Windstorm'
 };

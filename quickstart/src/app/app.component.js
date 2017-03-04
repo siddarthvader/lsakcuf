@@ -31,7 +31,7 @@ var Hero = (function () {
     return Hero;
 }());
 exports.Hero = Hero;
-shaktimaan: Hero = {
+Hero: Hero = {
     id: 1,
     name: 'Windstorm'
 };
