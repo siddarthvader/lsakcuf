@@ -21,14 +21,17 @@ var randNumber = 1;
 var samplet = 123;
 if (true) {
     var samplet_1 = 'name';
+    // console.log('innerScope',samplet);
 }
 // console.log('outerscope',samplet);
 var numbers = [13, 4.3, 232.2, 323];
 for (var _i = 0, numbers_1 = numbers; _i < numbers_1.length; _i++) {
     var val = numbers_1[_i];
+    // console.log(val);
 }
 console.log('+++++++++');
 for (var val in numbers) {
+    // console.log(val);
 }
 var sumTotal = function (num, str, arr) {
     return 4;

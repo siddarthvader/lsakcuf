@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "description": "i am making a custimozed blog for myself",
+  "main": "index.js",
+  "authors": [
+    "siddharth"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "learn"
+  ],
+  "homepage": "https://github.com/siddarthvader/lsakcuf",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
