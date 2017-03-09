@@ -1,7 +1,7 @@
 
 
 (function () {
-    'use strict'
+    // 'use strict'
 
     var _globalVar = {};
     _globalVar.r = Math.pow(1.8, 1508);
@@ -59,25 +59,37 @@
     }
 
 
-    _globalVar.stooge = {
-        first: "Jerome",
-        last: "Howard",
-        add: function (a, b) {
+    var stooge = function (str) {
+        this.first = "Jerome";
+        this.last = "Howard";
+        this.name = str;
+        this.add = function add(a, b) {
+
+            // var arguments='p';
+            // console.log(arguments.length,"arguments");
+
             this.sum = a + b;
-            console.log(this, "this");
+            // console.log(this, "this");
             return a + b;
         }
     };
 
-    _globalVar.stooge['avatar'] = '12323';
+    var a = new stooge('sid');
 
-    _globalVar.stooge.first = 'sid';
+    console.log('<a>', a.add(2, 1, 24), "value of a");
 
-    delete _globalVar.stooge.first;
+
+    // _globalVar.stooge.add(2,35);
+
+    a['avatar'] = '12323';
+
+    a.first = 'sid';
+
+    delete a.first;
 
     // console.log(_globalVar.stooge.first);
 
-    for (var i in _globalVar.stooge) {
+    for (var i in a) {
         // console.log(i);
     }
 
@@ -90,7 +102,7 @@
     }
 
 
-    _globalVar.another_stooge = _globalVar.stooge;
+    _globalVar.another_stooge = a;
 
     // console.info(typeof another_stooge.constructor);
 
@@ -137,9 +149,9 @@
 
     var mycontro = new contr('sid');
 
-    console.log(mycontro.get_name(), "mucontro");
+    // console.log(mycontro.get_name(), "mucontro");
 
-    let mynewContr = new contr('anshul');
+    var mynewContr = new contr('anshul');
 
     // console.log(contr.prototype.set_name.apply({name:'imminent'},['john']));
 
@@ -178,7 +190,7 @@
     //     console.log(i);
     // }
 
-    Function.prototype.makemethod = function (func,name) {
+    Function.prototype.makemethod = function (func, name) {
         this.prototype[name] = func;
         return this;
     };
@@ -186,18 +198,103 @@
 
     Number.makemethod(function () {
         return this < 0 ? 'ceiling' : 'floor';
-    },'integer');
+    }, 'integer');
 
     String.makemethod(function () {
         return this.replace(/^\s+|\s+$/g, '');
-    },'trim');
+    }, 'trim');
 
-    console.log((-10 / 3).integer(),'integer');
+    // console.log((-10 / 3).integer(),'integer');
 
-    console.log('"' + " neat ".trim( ) + '"');
+    // console.log('"' + " neat ".trim( ) + '"');
 
-    console.log(_globalVar);
+    // console.log(_globalVar);
 
+
+    // tower of hanoi
+
+
+    function moveDisc(from, to, using, n) {
+        if (n > 0) {
+            moveDisc(from, using, to, n - 1);
+            console.log('Move disc ' + n + ' from ' + from + ' to ' + to);
+            moveDisc(using, to, from, n - 1);
+        }
+    }
+
+    // moveDisc("A", "C", "B", 5);
+
+
+    // counting words using recursion
+    function countHi(str, substr, count, number) {
+        // console.log(number);
+        number++;
+        if (str.substr(0, substr.length) == substr) {
+            count++;
+            if (str.length <= substr.length) {
+                console.log("matched " + count + " times ", number);
+            }
+            else {
+                countHi(str.substr(substr.length), substr, count, number);
+            }
+        }
+        else {
+            if (str.length > substr.length) {
+                countHi(str.substr(1), substr, count, number)
+            }
+            else {
+                console.log("matched " + count + " times ", number);
+            }
+        }
+
+        // console.log("matched " + count + " times");
+
+    }
+
+    var str = 'yes keep doing it dont ask me who am i is it you and oyu only you though yes it does not atter realaly is this you';
+
+    // countHi(str, 'you', 0,0);
+
+    // console.log(str.length,'length');
+
+
+    var fibo = function (from, to, pre, prepre) {
+        if (pre == undefined) {
+            pre = 1;
+        }
+        if (prepre == undefined) {
+            prepre = 1;
+        }
+
+        if (from == 1) {
+            console.log(1);
+            fibo(2, to, 1, 1);
+        }
+        else if (from == 2) {
+            console.log(1);
+            fibo(from + 1, to, pre, prepre);
+        }
+        else {
+            console.log(pre + prepre);
+            if (from < to) {
+                fibo(from + 1, to, pre + prepre, pre);
+            }
+        }
+
+    };
+
+    // fibo(1, 152);
+
+
+    var factorial = function (n, total) {
+        total=total||1;
+        if(n<2){
+            return total;
+        }
+        return factorial(n-1,total*n)
+    }
+
+    // console.log(factorial(15));
 
 
 }());
