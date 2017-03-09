@@ -196,8 +196,7 @@
 
     console.log('"' + " neat ".trim( ) + '"');
 
-
-    
+    console.log(_globalVar);
 
 
 
