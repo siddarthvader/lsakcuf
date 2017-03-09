@@ -222,7 +222,7 @@
         }
     }
 
-    // moveDisc("A", "C", "B", 5);
+    // moveDisc("A", "C", "B", 50);
 
 
     // counting words using recursion
@@ -296,6 +296,19 @@
 
     // console.log(factorial(15));
 
+
+
+    var outerScope=function(){
+        var a=2,b=5;
+        var innerFunc=function(){
+            b=7;
+            var c=11;
+        }
+        console.log(a,b,"before");
+        innerFunc();
+        console.log(a,b,"after");
+    }
+    outerScope();
 
 }());
 
