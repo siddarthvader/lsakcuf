@@ -1,4 +1,4 @@
-
+var window=window;
 
 (function () {
     // 'use strict'
@@ -296,7 +296,7 @@
 
     // console.log(factorial(15));
 
-
+    // scopes
 
     var outerScope=function(){
         var a=2,b=5;
@@ -304,11 +304,52 @@
             b=7;
             var c=11;
         }
-        console.log(a,b,"before");
+        // console.log(a,b,"before");
         innerFunc();
-        console.log(a,b,"after");
+        // console.log(a,b,"after");
     }
     outerScope();
+
+
+    // closures
+
+    var myobj=function(num){
+        var calue=num;
+        return{
+            increment:function(){
+                console.log(this.calue);
+                calue++;
+                return calue; 
+            },
+            getValue:function(){
+                return calue;
+            }
+        }
+    };
+
+    var newMyObj=myobj(19);
+
+    console.log(newMyObj.increment());
+
+
+    var bObj=myobj(2);
+
+    console.log(bObj.getValue());
+
+    console.log(newMyObj.getValue());
+
+
+    function test(){
+        console.log('print');
+    }
+
+   var funcName=[test];
+
+    var atest=funcName[0];
+
+    console.log(atest);
+    atest();
+
 
 }());
 
