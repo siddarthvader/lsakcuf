@@ -1,4 +1,4 @@
-var window=window;
+var window = window;
 
 (function () {
     // 'use strict'
@@ -76,7 +76,7 @@ var window=window;
 
     var a = new stooge('sid');
 
-    console.log('<a>', a.add(2, 1, 24), "value of a");
+    // console.log('<a>', a.add(2, 1, 24), "value of a");
 
 
     // _globalVar.stooge.add(2,35);
@@ -287,22 +287,22 @@ var window=window;
 
 
     var factorial = function (n, total) {
-        total=total||1;
-        if(n<2){
+        total = total || 1;
+        if (n < 2) {
             return total;
         }
-        return factorial(n-1,total*n)
+        return factorial(n - 1, total * n)
     }
 
     // console.log(factorial(15));
 
     // scopes
 
-    var outerScope=function(){
-        var a=2,b=5;
-        var innerFunc=function(){
-            b=7;
-            var c=11;
+    var outerScope = function () {
+        var a = 2, b = 5;
+        var innerFunc = function () {
+            b = 7;
+            var c = 11;
         }
         // console.log(a,b,"before");
         innerFunc();
@@ -313,49 +313,128 @@ var window=window;
 
     // closures
 
-    var myobj=function(num){
-        var calue=num;
-        return{
-            increment:function(){
+    var myobj = function (num) {
+        var calue = num;
+        return {
+            increment: function () {
                 console.log(this.calue);
                 calue++;
-                return calue; 
+                return calue;
             },
-            getValue:function(){
+            getValue: function () {
                 return calue;
             }
         }
     };
 
-    var newMyObj=myobj(19);
+    var newMyObj = myobj(19);
 
     // console.log(newMyObj.increment());
 
 
-    var bObj=myobj(2);
+    var bObj = myobj(2);
 
     // console.log(bObj.getValue());
 
     // console.log(newMyObj.getValue());
 
 
-    function test(){
+    function test() {
         console.log('print');
     }
 
-   var funcName=[test];
+    var funcName = [test];
 
-    var atest=funcName[0];
+    var atest = funcName[0];
 
     // console.log(atest);
     // atest();
 
-    var add=new Function("a","b","return (a+b)");
+    var add = new Function("a", "b", "return (a+b)");
 
 
-    console.log(add(2,3));    
+    // console.log(add(2,3));    
 
 
+    var hanoi = function (source, med, dest, n) {
+        if (n == 1) {
+            console.log("move disc from " + source + " to " + dest);
+        }
+        else {
+            hanoi(source, dest, med, n - 1);
+            console.log("move disc from " + med + " to " + dest);
+            hanoi(med, source, dest, n - 1);
+        }
+
+    }
+
+    // hanoi("A","B","C",3);
+
+    var closure = function () {
+        var preservedInt = 3;
+
+    }
+
+    var index = 1;
+    var obj = {
+        index,
+        print(value) {
+            console.log(typeof this);
+            console.log(value);
+        }
+    }
+
+    var name = 'siddharth';
+    // obj.print.apply(name,[14, 10]);
+    // console.log(obj.index);
+
+    // back to closure
+
+
+    var obj = {
+        value: "obj",
+        increment(number) {
+            return number++;
+        },
+        getVal() {
+            return this.value;
+        }
+    }
+
+    // console.log(obj.getVal());
+
+    var closure = function () {
+        var value = "closure";
+        return {
+            increment: function (num) {
+                return num++;
+            },
+            getVal: function () {
+                return value;
+            }
+        }
+    };
+
+    var closureNew=new closure();
+
+    var func=function(){
+        this.value="func";
+        this.increment=function(num){
+              console.log(num++);
+              return num;  
+        };
+        this.getVal=function(){
+            return this.value;
+        }
+    };
+
+    var funcObj=new func();
+
+
+
+    console.log(obj);
+    console.log(funcObj);
+    console.log(closureNew instanceof closure);
 
 }());
 
