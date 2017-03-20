@@ -329,14 +329,14 @@ var window=window;
 
     var newMyObj=myobj(19);
 
-    console.log(newMyObj.increment());
+    // console.log(newMyObj.increment());
 
 
     var bObj=myobj(2);
 
-    console.log(bObj.getValue());
+    // console.log(bObj.getValue());
 
-    console.log(newMyObj.getValue());
+    // console.log(newMyObj.getValue());
 
 
     function test(){
@@ -347,8 +347,14 @@ var window=window;
 
     var atest=funcName[0];
 
-    console.log(atest);
-    atest();
+    // console.log(atest);
+    // atest();
+
+    var add=new Function("a","b","return (a+b)");
+
+
+    console.log(add(2,3));    
+
 
 
 }());
