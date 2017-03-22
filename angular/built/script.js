@@ -413,28 +413,78 @@ var window = window;
                 return value;
             }
         }
-    };
+    }();
 
-    var closureNew=new closure();
+    var closureNew = closure;
 
-    var func=function(){
-        this.value="func";
-        this.increment=function(num){
-              console.log(num++);
-              return num;  
+    var func = function () {
+        this.value = "func";
+        this.increment = function (num) {
+            console.log(num++);
+            return num;
         };
-        this.getVal=function(){
+        this.getVal = function () {
             return this.value;
         }
     };
 
-    var funcObj=new func();
+    var funcObj = new func();
+
+    // console.log(obj);
+    // console.log(funcObj);
+    // console.log(closureNew instanceof closure);
 
 
+    var closure1=function(){
+        var name='siddarth';
+        function printName(){
+            console.log("name is "+name);   
+        }
+        printName();
+    }
 
-    console.log(obj);
-    console.log(funcObj);
-    console.log(closureNew instanceof closure);
+    var copyClosure1=closure1;
+
+    // copyClosure1();
+
+    var Quo=function(status){
+        return{
+            get_status:function(){
+                return status;
+            }
+        }
+    };
+
+    var myQuo=Quo('amazed');
+    var myNewQUo=new Quo('new');
+
+    // console.log(myQuo instanceof Quo,'myQuo');
+    // console.log(myNewQUo instanceof Quo,'myNewQUo');
+
+
+    var contrik=function(str){
+        
+        this.getName=function(){
+            console.log('name',name)
+            return this.name;
+        };
+        this.getter=function(){
+            get_name();
+        };
+
+        var get_name=function(){
+            console.log(name,"name");
+            console.log(this.name,"this.name");
+        };
+
+        this.name=str;
+        var name=str+str;
+        
+
+    }
+   
+    var newContrik=new contrik('sid');
+    newContrik.getName();
 
 }());
 
