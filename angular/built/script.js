@@ -435,56 +435,89 @@ var window = window;
     // console.log(closureNew instanceof closure);
 
 
-    var closure1=function(){
-        var name='siddarth';
-        function printName(){
-            console.log("name is "+name);   
+    var closure1 = function () {
+        var name = 'siddarth';
+        function printName() {
+            console.log("name is " + name);
         }
         printName();
     }
 
-    var copyClosure1=closure1;
+    var copyClosure1 = closure1;
 
     // copyClosure1();
 
-    var Quo=function(status){
-        return{
-            get_status:function(){
+    var Quo = function (status) {
+        return {
+            get_status: function () {
                 return status;
             }
         }
     };
 
-    var myQuo=Quo('amazed');
-    var myNewQUo=new Quo('new');
+    var myQuo = Quo('amazed');
+    var myNewQUo = new Quo('new');
 
     // console.log(myQuo instanceof Quo,'myQuo');
     // console.log(myNewQUo instanceof Quo,'myNewQUo');
 
 
-    var contrik=function(str){
-        
-        this.getName=function(){
-            console.log('name',name)
+    function contrik(str) {
+
+        this.getName = function () {
+            // console.log('name', name)
             return this.name;
         };
-        this.getter=function(){
-            get_name();
-        };
-
-        var get_name=function(){
-            console.log(name,"name");
-            console.log(this.name,"this.name");
-        };
-
-        this.name=str;
-        var name=str+str;
         
+        this.getter = function () {
+            get_name();
+            console.log(this,'getter');
+        };
+
+        function get_name() {
+            console.log(this, "name");
+            // console.log(this.name, "this.name");
+        };
+
+        // get_name();
+
+        this.name = str;
+        var name = str + str;
 
     }
-   
-    var newContrik=new contrik('sid');
-    newContrik.getName();
+
+    var newContrik = new contrik('sid');
+    newContrik.getter();
+
+
+    function Container(param) {
+
+        this.test=function(){
+             dec();   
+        }  
+        
+        function dec() {
+            console.log(secret);
+            if (secret > 0) {
+                secret -= 1;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    
+        this.member = param;
+        var secret = 3;
+        var that = this;
+    }
+
+    var cont=new Container(12);
+    // cont.test();
+
+
+    
+
 
 }());
 
