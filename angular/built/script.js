@@ -447,16 +447,7 @@ var window = window;
 
     // copyClosure1();
 
-    var Quo = function (status) {
-        return {
-            get_status: function () {
-                return status;
-            }
-        }
-    };
 
-    var myQuo = Quo('amazed');
-    var myNewQUo = new Quo('new');
 
     // console.log(myQuo instanceof Quo,'myQuo');
     // console.log(myNewQUo instanceof Quo,'myNewQUo');
@@ -468,15 +459,15 @@ var window = window;
             // console.log('name', name)
             return this.name;
         };
-        
+
         this.getter = function () {
             get_name();
-            console.log(this,'getter');
+            // console.log(this,'getter');
         };
 
         function get_name() {
-            console.log(this, "name");
-            // console.log(this.name, "this.name");
+            console.log(name, "name");
+            console.log(this.name, "this.name");
         };
 
         // get_name();
@@ -492,10 +483,10 @@ var window = window;
 
     function Container(param) {
 
-        this.test=function(){
-             dec();   
-        }  
-        
+        this.test = function () {
+            dec();
+        }
+
         function dec() {
             console.log(secret);
             if (secret > 0) {
@@ -506,18 +497,57 @@ var window = window;
             }
         }
 
-    
+
         this.member = param;
         var secret = 3;
         var that = this;
     }
 
-    var cont=new Container(12);
+    var cont = new Container(12);
     // cont.test();
 
 
-    
+    var Quo = function (status) {
+        return {
+            get_status: function () {
+                return status;
+            }
+        }
+    };
 
+    var myQuo = Quo('amazed');
+    var myNewQUo = new Quo('new');
+
+
+    // Define a function that sets a DOM node's color
+    // to yellow and then fades it to white.
+    var fade = function (node) {
+        var level = 1;
+        var step = function () {
+            var hex = level.toString(16);
+            node.style.backgroundColor = '#FFFF' + hex + hex;
+            if (level < 15) {
+                level += 1;
+                setTimeout(step, 100);
+            }
+        };
+        setTimeout(step, 100);
+    };
+    // fade(document.body);
+
+    var attach_events = function (nodes) {
+        for (var i = 0, len = nodes.length; i < len; i++) {
+            nodes[i].onclick = function (i) {
+                return function (bum) {
+                    console.info(i);
+                }
+            }(i);
+
+        }
+    };
+    attach_events(document.getElementsByClassName('clickable')[0].children);
+
+    
 
 }());
 
