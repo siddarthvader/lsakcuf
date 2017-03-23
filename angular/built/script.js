@@ -546,7 +546,6 @@ var window = window;
         }
     };
     attach_events(document.getElementsByClassName('clickable')[0].children);
-
     
 
 }());
