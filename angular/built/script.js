@@ -467,7 +467,7 @@ var window = window;
 
         function get_name() {
             console.log(name, "name");
-            console.log(this.name, "this.name");
+            // console.log(this.name, "this.name");
         };
 
         // get_name();
@@ -545,8 +545,23 @@ var window = window;
 
         }
     };
-    attach_events(document.getElementsByClassName('clickable')[0].children);
-    
+    // attach_events(document.getElementsByClassName('clickable')[0].children);
+
+    function strict(){
+        "use strict";
+        let add = (a, b) => a*2 + b*9;
+
+        let sub=(a,b)=>{
+            console.log(this);
+            return a-b;
+        }
+
+        console.log(sub(2, 3))
+    }
+
+    strict();
+
+
 
 }());
 
